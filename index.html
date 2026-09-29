@@ -1,129 +1,140 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <title>Fotbal</title>
-
-    <style>
-        body {
-            background-color: #f2f2f2;
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            color: #222222;
-        }
-
-        h1 {
-            color: #c8102e;
-            text-align: center;
-            font-size: 40px;
-        }
-
-        h2 {
-            color: #333333;
-            border-bottom: 2px solid #c8102e;
-            padding-bottom: 5px;
-        }
-
-        h3 {
-            color: #c8102e;
-        }
-
-        p {
-            font-size: 18px;
-            line-height: 1.5;
-        }
-
-        img {
-            display: block;
-            margin: 20px auto;
-            border-radius: 10px;
-        }
-
-        ul {
-            background-color: white;
-            padding: 20px 40px;
-            border-radius: 10px;
-            width: 300px;
-        }
-
-        li {
-            margin: 8px;
-        }
-
-        a {
-            color: #c8102e;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotbal – Král světového sportu</title>
+    <!-- Propojení s externím CSS souborem -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <h1>Svět fotbalu</h1>
+    <!-- NAVIGAČNÍ MENU -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">⚽</span> Svět <span class="text-primary">fotbalu</span>
+            </div>
 
-   
-    <p>
-        Fotbal je jeden z nejpopulárnějších sportů na světě.
-        Hraje se mezi dvěma týmy, které se snaží vstřelit co nejvíce gólů.
-    </p>
+            <!-- Tlačítko menu pro mobily -->
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
 
-    <h2>Fotbalové kluby</h2>
+            <ul class="nav-links" id="nav-list">
+                <li><a href="#home">Úvod</a></li>
+                <li class="dropdown">
+                    <a href="#about" class="dropbtn">
+                        O nás <span class="arrow-down">&#9660;</span>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="#sluzby">Naše služby</a>
+                        <a href="#tym">Náš tým</a>
+                        <a href="#cenik">Ceník</a>
+                    </div>
+                </li>
+                <li><a href="#kluby">Kluby</a></li>
+                <li><a href="#pozice">Pozice</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <h3>Atlético Madrid</h3>
+    <!-- KONTEJNER OBSAHU STRÁNKY -->
+    <div class="container" id="home">
 
-    <ul>
-        <li>Atlético Madrid</li>
-        <li>Španělsko</li>
-        <li>Madrid</li>
-        <li>Červenobílé dresy</li>
-        <li>Můj oblíbený klub</li>
-    </ul>
+        <h1>Svět fotbalu</h1>
+        <p class="subtitle">Nejoblíbenější hra světa, která spojuje miliony lidí napříč kontinenty.</p>
 
-    <h3>Real Madrid</h3>
+        
+        <p>
+            Fotbal (z anglického <em>football</em>) je celosvětovým fenoménem s více než <strong>3,5 miliardami fanoušků</strong>. 
+            Tento dynamický týmový sport staví na jednoduchých pravidlech, vysokém nasazení a touze po vítězství: 
+            dva týmy po 11 hráčích bojují během 90 minut o to, kdo dokáže dostat míč do soupeřovy sítě.
+        </p>
 
-    <ul>
-        <li>Real Madrid</li>
-        <li>Španělsko</li>
-        <li>Madrid</li>
-        <li>Bílé dresy</li>
-        <li>Velký rival Atlética Madrid</li>
-    </ul>
+        <h2 id="kluby" style="margin-top: 30px;">Legendární fotbalové kluby</h2>
 
-    <h2>Oblíbené fotbalové pozice</h2>
+        <div class="club-card">
+            <div class="club-info">
+                <h3>Atlético Madrid (Los Colchoneros)</h3>
+                <p>Klub známý svou bojovností, taktickou disciplínou a vášnivými fanoušky.</p>
+                <ul>
+                    <li><strong>Země / Město:</strong> Španělsko, Madrid</li>
+                    <li><strong>Tradiční barvy:</strong> Červenobílé dresy a modré kraťasy</li>
+                    <li><strong>Domovský stadion:</strong> Cívitas Metropolitano</li>
+                    <li><strong>Zajímavost:</strong> Přezdívka <em>"Los Colchoneros"</em> (Výrobci matrací) vznikla v minulosti podle vzoru starých španělských matrací, které měly stejné červenobílé pruhy.</li>
+                </ul>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/en/f/f9/Atletico_Madrid_Logo_2024.svg" alt="Atlético Madrid logo" class="club-logo">
+        </div>
 
-    <ul>
-        <li>Brankář</li>
-        <li>Obránce</li>
-        <li>Záložník</li>
-        <li>Útočník</li>
-    </ul>
+        <div class="club-card">
+            <div class="club-info">
+                <h3>Real Madrid (Los Blancos)</h3>
+                <p>Nejúspěšnější klub v historii Ligy mistrů a velký rival Atlética Madrid v slavném městském derby <em>El Derbi Madrileño</em>.</p>
+                <ul>
+                    <li><strong>Země / Město:</strong> Španělsko, Madrid</li>
+                    <li><strong>Tradiční barvy:</strong> Čistě bílé dresy</li>
+                    <li><strong>Domovský stadion:</strong> Santiago Bernabéu</li>
+                    <li><strong>Zajímavost:</strong> Titul <em>"Real"</em> (Královský) udělil klubu španělský král Alfonso XIII. již v roce 1920.</li>
+                </ul>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" alt="Real Madrid logo" class="club-logo">
+        </div>
 
-    <h2>Zajímavé odkazy</h2>
+        <h2 id="pozice" style="margin-top: 30px;">Klíčové fotbalové pozice</h2>
+        <p>Každá pozice na hřišti vyžaduje specifické schopnosti a fyzickou přípravu:</p>
 
-    <ul>
-        <li>
-            <a href="https://www.atleticodemadrid.com">
-                Oficiální web Atlético Madrid
-            </a>
-        </li>
+        <ul>
+            <li><strong>Brankář:</strong> Poslední linie obrany a jediný hráč, který smí v pokutovém území hrát rukama. Vyžaduje rychlé reflexy a odvahu.</li>
+            <li><strong>Obránce:</strong> Zastavuje útoky soupeře, vyhrává osobní souboje a pomáhá budovat hru z vlastní poloviny hřiště.</li>
+            <li><strong>Záložník:</strong> "Srdce a mozek" týmu. Propojuje obranu s útokem, nahrává na góly a uběhne za zápas nejvíce kilometrů.</li>
+            <li><strong>Útočník:</strong> Hlavní zakončovatel týmu, jehož primárním úkolem je střílet góly a překonávat obranu soupeře.</li>
+        </ul>
 
-        <li>
-            <a href="https://www.realmadrid.com">
-                Oficiální web Real Madrid
-            </a>
-        </li>
+        <h2 id="kontakt" style="margin-top: 30px;">Oficiální zdroje a odkazy</h2>
 
-        <li>
-            <a href="https://cs.wikipedia.org/wiki/Fotbal">
-                Fotbal na české Wikipedii
-            </a>
-        </li>
-    </ul>
+        <ul>
+            <li>
+                <a href="https://www.atleticodemadrid.com" target="_blank">
+                    Oficiální stránky Atlético Madrid
+                </a> – Novinky, zápasy a informace o týmu.
+            </li>
+            <li>
+                <a href="https://www.realmadrid.com" target="_blank">
+                    Oficiální stránky Real Madrid
+                </a> – Aktuální dění z prostředí králů Evropy.
+            </li>
+            <li>
+                <a href="https://cs.wikipedia.org/wiki/Fotbal" target="_blank">
+                    Fotbal na české Wikipedii
+                </a> – Kompletní historie, detailní pravidla a přehled soutěží.
+            </li>
+        </ul>
 
+    </div>
+
+    <!-- JAVASCRIPT PRO MOBILNÍ MENU -->
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+        const dropdown = document.querySelector('.dropdown');
+
+        // Otevření/zavření mobilního menu
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+
+        // Přepínání dropdownu na mobilu při kliknutí
+        dropdown.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                dropdown.classList.toggle('active');
+            }
+        });
+    </script>
 </body>
 </html>

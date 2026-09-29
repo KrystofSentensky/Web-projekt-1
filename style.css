@@ -1,0 +1,278 @@
+/* --- ZÁKLADNÍ RESET A FONTY --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+/* --- HLAVNÍ NAVIGAČNÍ MENU --- */
+#navbar {
+    background-color: #1a252f; /* Tmavé elegantní pozadí */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 100%;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 70px;
+}
+
+/* Logo a ikonka */
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-icon {
+    display: inline-block;
+    font-size: 1.4rem;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.logo .text-primary {
+    color: #2ecc71; /* Fotbalová zelená */
+}
+
+/* Odkazy v menu */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    height: 100%;
+    align-items: center;
+}
+
+.nav-links > li {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 10px 18px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Šipka u dropdown menu – ihned viditelná */
+.arrow-down {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: #2ecc71;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition: transform 0.3s ease;
+}
+
+/* Otočení šipky při najetí */
+.dropdown:hover .arrow-down {
+    transform: rotate(180deg);
+}
+
+/* Hover efekty na odkazech */
+.nav-links > li > a:hover {
+    color: #2ecc71;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Podtržení při přejetí */
+.nav-links > li > a::after {
+    content: '';
+    position: absolute;
+    bottom: 12px;
+    left: 18px;
+    right: 18px;
+    height: 2px;
+    background-color: #2ecc71;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-links > li > a:hover::after {
+    transform: scaleX(1);
+}
+
+/* --- DROPDOWN (ROZBALOVACÍ MENU) --- */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #243342;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+    border-top: 3px solid #2ecc71;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.dropdown-content a {
+    color: #dcdde1;
+    padding: 12px 20px;
+    display: block;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #2ecc71;
+    color: #1a252f;
+    font-weight: 600;
+}
+
+/* Zobrazení dropdownu při přejetí myší */
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hamburger tlačítko pro mobilní zařízení */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* --- OBSAHOVÁ ČÁST --- */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+    color: #1a252f;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #7f8c8d;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+.main-img {
+    display: block;
+    margin: 20px auto;
+}
+
+.club-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f8f9fa;
+    border-left: 4px solid #2ecc71;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 6px;
+    gap: 20px;
+}
+
+.club-logo {
+    max-width: 100px;
+    height: auto;
+}
+
+/* --- RESPONZIVITA (MOBILNÍ VERZE) --- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #1a252f;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        height: auto;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+    }
+
+    .nav-links.active {
+        max-height: 400px;
+    }
+
+    .nav-links > li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        padding: 15px 20px;
+        width: 100%;
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        border-top: none;
+        background-color: #141d24;
+        opacity: 1;
+        transform: none;
+        display: none;
+    }
+
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+
+    .club-card {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+}
